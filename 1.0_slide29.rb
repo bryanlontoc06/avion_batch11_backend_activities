@@ -16,14 +16,13 @@ end
 
 # 3
 x = ""
-while x != "STOP" 
-    do
+while x != "STOP" do
     puts "What is you name?"
     name = gets.chomp
     puts "Hello #{name}, how are you?"
     ans = gets.chomp
     puts "Good to know that you're #{ans} now"
-    puts "Do you want me to ask you again?"
+    puts "Do you want me to ask you again? type \"STOP\" to stop asking" 
     x = gets.chomp
 end
 
