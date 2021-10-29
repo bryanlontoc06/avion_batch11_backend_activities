@@ -27,8 +27,8 @@ def create_secure_users(list_of_users)
     list_of_users
 end
 
-new_hash_user = create_secure_users(users)
-puts new_hash_user
+create_secure_users(users)
+puts users
 
 def authenticate_user(username, password, list_of_users)
     list_of_users.each do |user_record|
@@ -40,4 +40,4 @@ def authenticate_user(username, password, list_of_users)
     "Credentials were not correct"
 end
 
-p authenticate_user("heisenberg", "password5", new_hash_user)
+p authenticate_user("heisenberg", "password5", users)
