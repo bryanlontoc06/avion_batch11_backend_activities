@@ -1,0 +1,42 @@
+1. Create a table named 'Students'. Fields: name: character varying(50), course: character varying(50), age: numeric.
+create table Students(
+id integer PRIMARY KEY,
+name character varying(50),
+course character varying(50),
+age numeric,
+created_at timestamp without time zone NOT NULL,
+updated_at timestamp without time zone NOT NULL
+);
+
+2. Insert 5 records to the Students table. You are in charge of the data.
+insert into students (id, name, course, age, created_at, updated_at)
+values(1, 'Juan', 'BSIT', 22, current_timestamp, current_timestamp),
+(2, 'Pedro', 'BSCE', 24, current_timestamp, current_timestamp),
+(3, 'John', 'BSCS', 21, current_timestamp, current_timestamp),
+(4, 'Peter', 'BSBA', 20, current_timestamp, current_timestamp),
+(5, 'Ruby', 'BSME', 23, current_timestamp, current_timestamp);
+
+3. Sort them by descending age.
+select * from students ORDER BY age DESC;
+
+4. Get their average age.
+select avg(age) from students;
+
+5. Get the sum of their age.
+select sum(age) from students;
+
+6. Display millenials (age 25 to 32 yrs old).
+select name from students where age>=25 and age<=32;
+
+7. Update the course of millenials to "Millenialogy".
+ALTER TABLE students
+  RENAME COLUMN course TO millenialogy;
+
+8. Delete students whose age are greater than 30.
+delete from students where age>30;
+
+9. Display the names of the students
+select name from students;
+
+10. Display the names and courses of students whose age are lower than 20
+select name, course from students where age<20;

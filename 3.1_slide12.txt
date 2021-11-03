@@ -1,0 +1,39 @@
+create table instructors (
+id integer PRIMARY KEY,
+first_name character varying(255) NOT NULL,
+last_name character varying(255) NOT NULL,
+lesson_id numeric,
+created_at timestamp without time zone NOT NULL,
+updated_at timestamp without time zone NOT NULL
+);
+
+insert into instructors (id, first_name, last_name, lesson_id, created_at, updated_at) 
+values (1, 'Adrian', 'Co', 1, current_timestamp, current_timestamp),(2, 'Analyn', 'Cajocson', 1, current_timestamp, current_timestamp),(3, 'Pau', 'Riosa', 3, current_timestamp, current_timestamp),(4, 'Maurus', 'Vitor', 3, current_timestamp, current_timestamp),(5, 'John', 'Young', 6, current_timestamp, current_timestamp);
+
+insert into lessons(id, name, description, front_end, back_end, price, created_at, updated_at)
+values (1, 'Ruby', 'Ruby is an interpreted, high-level, general-purpose.', false, true, 199.99, current_timestamp, current_timestamp), (2, 'Python', 'Python is an interpreted, high-level, general-purpose.', false, false, 199.99, current_timestamp, current_timestamp), (3, 'Javascript', 'Javascript is a programming language that conform.', true, true, 99.99, current_timestamp, current_timestamp), (4, 'Rust', 'Rust is a multi-paradigm programming language.', false, true, 499.99, current_timestamp, current_timestamp), (5, 'Golang', 'Go is a statically typed, compiled programming language.', false, true, 499.99, current_timestamp, current_timestamp);
+
+
+
+
+create table classrooms (
+id integer PRIMARY KEY,
+student_id numeric,
+section character varying(255) NOT NULL,
+created_at timestamp without time zone NOT NULL,
+updated_at timestamp without time zone NOT NULL
+);
+
+
+insert into classrooms (id, student_id, section, created_at, updated_at)
+values (1, 000, 'Apple', current_timestamp, current_timestamp), (2, 001, 'Apple', current_timestamp, current_timestamp), (3, 003, 'Banana', current_timestamp, current_timestamp), (4, 004, 'Banana', current_timestamp, current_timestamp), (5, 005, 'Carrots', current_timestamp, current_timestamp), (6, 006, 'Durian', current_timestamp, current_timestamp), (7, 007, 'Carrots', current_timestamp, current_timestamp), (8, 008, 'Guyabano', current_timestamp, current_timestamp), (9, 009, 'Guyabano', current_timestamp, current_timestamp), (10, 010, 'Strawberry', current_timestamp, current_timestamp);
+
+
+
+select c.section, s.first_name, s.last_name from classrooms c inner join students s on s.id = c.student_id;
+
+select c.section, s.first_name, s.last_name from classrooms c left join students s on s.id = c.student_id;
+
+select c.section, s.first_name, s.last_name from classrooms c right join students s on s.id = c.student_id;
+
+select c.section, s.first_name, s.last_name from classrooms c full join students s on s.id = c.student_id;
