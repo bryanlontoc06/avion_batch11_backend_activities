@@ -12,6 +12,8 @@ def increment_string(string)
     end
 end
 
+
+puts increment_string('foobar')
 puts increment_string('foobar23')
 puts increment_string('foo0042')
 puts increment_string('foo9')
