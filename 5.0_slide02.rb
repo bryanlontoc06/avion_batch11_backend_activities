@@ -1,4 +1,4 @@
-# Output ay all unique numbers (like .uniq method)
+# Output all unique numbers (like .uniq method)
 def find_uniq(arr)
     arr.tally.select { |k, v| v == 1}.keys
 end
@@ -7,7 +7,7 @@ puts find_uniq([0, 0, 0, 0.55, 0, 0])
 
 
 
-# Output lang ay first unique number
+# Output only first unique number
 def find_uniq(arr) 
 arr.tally.index(1) 
 end
